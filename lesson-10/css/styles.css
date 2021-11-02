@@ -1,0 +1,254 @@
+
+/* ********************************** Global Styles ***************** */
+
+html {
+    box-sizing: border-box; /* includes padding and border when calculating element's width */
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;              /* Removes browser's default margin/padding from body */
+    padding: 0;
+    font-size: 1.2rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+h1, h2 {
+    font-family: 'Yeseva One', cursive;
+}
+.content-wrapper {  /* centers page content, controls content width */
+    max-width: 1216px;  /* max-width of content is 1216px */
+    width: 80%;
+    margin: 0 auto;  /* auto-centers page content */
+}
+
+/* ********************************** Navigation Styles ***************** */
+
+nav { /* sets background color for nav */
+    background-color: #6d9c9b;
+    padding: 1rem 0;
+}
+.nav-menu-logo { /* sets font family and size for J.G. Design logo */
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.9rem;
+}
+.nav-menu-items { /* sets font family, size, weight, and text-align for "About," "Portfolio," and "Services */
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+}
+nav ul { /* navigation's unordered list */ 
+    list-style-type: none; /* Removes bullets from list items */
+    margin: 0;             /* Removes browser's default margin/padding from ul */
+    padding: 1.5rem;
+}
+
+/* ------------- Navigation Link States ---------------- */
+nav a { /* navigation's link text (for all states) */
+    /* border: 5px solid green; */
+    color: white;
+    text-decoration: none;
+    padding: 1rem; /* makes large clickable area for links */
+}
+nav a:hover {
+    background-color: #bddbd1;
+    color: #533a7b;
+}
+#nav-item-a a:hover {
+   color: white;
+   background-color: #6d9c9b;
+}
+
+/* ------------- Navigation Bar CSS Grid ---------------- */
+.nav-parent { /* creates css grid for navigation bar */
+    display: grid;
+    grid-template-columns: 4fr 6fr repeat(3, 2fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    align-items: center;
+}
+#nav-item-a { /* "J.G. Design logo" */ 
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+#nav-item-b { /* "About" */ 
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+#nav-item-c { /* Portfolio */ 
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+#nav-item-d { /* Services */ 
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+/* ********************************** Header/About Styles ***************** */
+/* ------------- Header CSS Grid ---------------- */
+header {
+    background-color: #DAEBE5;
+    min-height: 300px;
+    padding: 4.5rem 0;
+}
+.header-h1 {
+    color: #533a7b;
+}
+.header-p {
+    font-size: 1.5rem;
+}
+header p, header h1 {
+    margin: 0;
+}
+
+/* ********************************** Project Categories Styles ***************** */
+.project-categories {
+    min-height: 150px;
+    padding: 2rem 0;
+    background-color: #533a7b;
+    color: white;
+}
+.project-categories h2 {
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 3rem;
+}
+.clickable-categories a {
+    color: white;
+    font-size: 1.5rem;
+    border: 4px solid #674899;
+    padding: 1rem;
+    border-radius: 25px;
+    margin: 0 1rem;
+}
+.project-categories li {
+    list-style: none;
+}
+/* ********************************** Image Grid Styles ***************** */
+.image-grid {
+    padding: 5rem 0;
+    text-align: center;
+}
+/* ********************************** Footer Styles ***************** */
+footer { 
+    background-color: #6d9c9b;
+}
+/* ------------- Footer CSS Grid ---------------- */
+footer {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    color: white;
+}
+footer a, footer a:link {
+    color: white;
+}
+.footer-left a {
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.footer-right h3 {
+    padding: 0rem 1rem 1rem 1rem;
+}
+.footer-right ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-right li, .footer-right a{
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+/* ********************************** Responsive ***************** */
+
+@media screen and (min-width:1000px) {
+
+    /* Header */
+    .header-parent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 25px;
+    }
+    .header-h1 {
+        grid-area: 1 / 1 / span 2 / span 1;
+        max-width: 507px;
+        text-align: center;
+        font-size: 4rem;
+    }
+    #header-p2 {
+        grid-column-start: -2;
+    }
+    /* Project Categories */
+    .project-categories-parent {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    /* Image Grid */
+    .first-image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 8px;
+        grid-row-gap: 0px;
+        margin-bottom: 8px;
+    }
+    .second-image-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+    }
+    /* Footer */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 4fr 4fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 8px;
+        grid-row-gap: 0px; 
+    }
+    .footer-left {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .footer-right {
+        grid-column-start: 2;
+        text-align: right;
+    }
+    .footer-left a {
+        padding: 0 1rem;
+    }
+    .footer-right h3 {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:999px) {
+    
+    /* Header */
+    .header-h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    /* Project Categories */
+    .clickable-categories{
+        text-align: center;
+        margin: 3.5rem 0;
+    }
+    /* Footer */
+    footer {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .footer-left a {
+        padding-bottom: 1rem;
+    }
+    .footer-right h3 {
+        margin-bottom: 0;
+    }
+    
+}
